@@ -5,9 +5,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.sum9.App
 import com.example.sum9.dao.ItemDao
-import com.example.sum9.entity.Item
+import com.example.sum9.model.ItemModel
 
-@Database(entities = [Item::class], version = 1)
+@Database(entities = [ItemModel::class], version = 1)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun itemDao() : ItemDao
 

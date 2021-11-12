@@ -1,9 +1,11 @@
 package com.example.sum9
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sum9.databinding.ItemCardBinding
+import com.example.sum9.extensions.setImage
 import com.example.sum9.model.ItemModel
 
 class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder>() {
@@ -14,6 +16,9 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder>() {
         private lateinit var model: ItemModel
         fun onBind() {
             model = items[adapterPosition]
+            binding.tvTitle.text = model.title
+            binding.tvPrice.text = model.price
+            binding.ivItemCover.setImage(model.cover)
         }
     }
 
@@ -27,4 +32,14 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder>() {
     }
 
     override fun getItemCount() = items.size
+
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(items: MutableList<ItemModel>) {
+        this.items.clear()
+        this.items.addAll(items)
+        notifyDataSetChanged()
+    }
+
 }
+

@@ -7,6 +7,6 @@ fun View.showSnackbar(title:String) {
     Snackbar.make(
         this,
         title,
-        Snackbar.LENGTH_SHORT
+        Snackbar.LENGTH_LONG
     ).show()
 }

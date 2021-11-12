@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("05d71804-4628-4269-ac03-f86e9960a0bb")
-    suspend fun getItems(): Response<ItemModel>
+    suspend fun getItems(): Response<List<ItemModel>>
 
 }
