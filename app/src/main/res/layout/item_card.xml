@@ -9,11 +9,12 @@
     android:layout_margin="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivItemCover"
         android:layout_width="match_parent"
         android:background="@drawable/image_background"
         android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@drawable/image_background"
         android:layout_height="210dp"/>
 
     <TextView

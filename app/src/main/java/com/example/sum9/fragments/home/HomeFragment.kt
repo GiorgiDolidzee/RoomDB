@@ -49,6 +49,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     viewModel.items.collect {
                         if(!it.isNullOrEmpty()) {
                             itemsAdapter.setData(it.toMutableList())
+                        } else {
+                            view?.showSnackbar("Not Found Items")
                         }
                     }
                 }
